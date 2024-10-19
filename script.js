@@ -16,15 +16,25 @@ function submitForm(stepData, endpoint) {
         alert('Error submitting the step');
     });
 }
+function loading() {
+    let buttonload = document.getElementById('submitForm');
+    buttonload.innerHTML = `<i class="fa-solid fa-spinner fa-spin-pulse"></i> Saving...`;
+    buttonload.disabled = true;
+    console.log("its loading");
 
-document.getElementById('submitForm').addEventListener('click', function() {
+    setTimeout(() => {
+        buttonload.innerHTML = "Submit";
+        buttonload.disabled = false;
+    }, 3000);
+  } 
+
+/*document.getElementById('submitForm').addEventListener('click', function() {
     const fname = document.getElementById('fname').value;
     const lname = document.getElementById('lname').value;
     const age = document.getElementById('age').value;
     const weight = document.getElementById('weight').value;
     const height = document.getElementById('height').value;
     const complaints = document.getElementById('complaints').value;
-    const targetTable = document.getElementById('table').value;  // Get the selected table
 
     const formData = {
         fname: fname,
@@ -33,7 +43,6 @@ document.getElementById('submitForm').addEventListener('click', function() {
         weight: weight,
         height: height,
         complaints: complaints,
-        target_table: targetTable  // Send the selected table
     };
 
     fetch('/submitForm', {
@@ -53,3 +62,8 @@ document.getElementById('submitForm').addEventListener('click', function() {
         alert('Error submitting the form');
     });
 });
+*/
+
+
+
+
